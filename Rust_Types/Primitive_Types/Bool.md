@@ -18,127 +18,230 @@ There are also operators in rust that allow us to manipulate the Boolean logic v
 ### **Unary:**
 
 1. Logical NOT: Whatever this operator is next to is reversed.
-    * Operator: ``` ! ``` :: ``` LOGICAL NOT ```
+
+    * Operator: ``` !Expression ``` :: ``` LOGICAL NOT ```
+
     * Example:
 
     ``` Rust
         fn main() {
             let y = true;
 
-            if y == !true{
+            if !y{
                 println!("Y is equal to False");
             }else{
                 println!("Y is equal to True");
             }
         }
 
-        // Output: Y is equal to True
-
+        // Output: Y is equal to True.
     ```
 
 ### **Binary:**
 
-1. **Logical AND**: *IF* both values are true then the output will be true.
+1. Is Equal To: The Operator on the left is compared to the Operator on the Right, if the values are equal to each other then the result is true.
 
-    * Operator: ``` && ``` :: ``` LOGICAL AND ```
+    * Operator:  ``` Expression == Expression ``` :: ``` IS EQUAL TO ```
 
     * Example:
 
     ``` Rust
         fn main() {
-            let y = 2;
-            let x = 3;
+            let y = true;
 
-            if y == !false{
+            if y{
                 println!("Y is equal to True");
             }else{
                 println!("Y is equal to False");
             }
         }
 
-        // Output: Y is equal to 2, and X is equal to 3.
-
+        // Output: Y is equal to True
     ```
 
-2. **Logical OR**: *IF* either values are true *OR* both values are true then the output will be true.
+2. **Logical AND**: *IF* both values are true then the output will be true.
 
-    * Operator: ``` || ``` :: ``` LOGICAL OR ```
+    * Operator: ``` Expression && Expression ``` :: ``` LOGICAL AND ```
 
     * Example:
 
     ``` Rust
         fn main() {
-            let y = 2;
-            let x = 3;
+            let y = 0;
+            let x = 1;
 
-            if y == !false{
+            if  y == 0 && x == 1{
+                println!("Y and X evaluate to true");
+            }else{
+                println!("Either Y or X are false, or both are False");
+            }
+        }
+
+        // Output: Y and X evaluate to true
+    ```
+
+3. **Logical OR**: *IF* either values are true *OR* both values are true then the output will be true.
+
+    * Operator: ``` Expression || Expression ``` :: ``` LOGICAL OR ```
+
+    * Example:
+
+    ``` Rust
+        fn main() {
+            let y = 0;
+            let x = 1;
+
+            if  y == 0 || x == 1{
+                println!("Y or X evaluate to true");
+            }else{
+                println!("Neither Y nor X are true, so both are False");
+            }
+        }
+
+        // Output: Y and X evaluate to true
+    ```
+
+4. **Logical NAND**: *IF* **NEITHER** values are true *OR* a **SINGULAR** value is true then the output will be true.
+
+    * Operator: ``` Expression && !Expression ``` :: ``` LOGICAL NOT + LOGICAL AND ```
+
+    * Example:
+
+    ``` Rust
+        fn main() {
+            let x = true;
+            let y = false;
+
+            if  x && !y{
+                println!("Y and X evaluate to true");
+            }else{
+                println!("Either Y or X are false, so both are False");
+            }
+        }
+
+        // Output: Y and X evaluate to true
+    ```
+
+5. **Logical NOR**: *IF* **NEITHER** value is true then the output will be true.
+
+    * Operator: ``` Expression || !Expression ``` :: ``` LOGICAL NOT + LOGICAL OR ```
+
+    * Example:
+
+    ``` Rust
+        fn main() {
+            let x = 3;
+            let y = 2;
+
+            if y == 2 || x == 2{
+                println!("Y or X evaluate to true");
+            }else{
+                println!("Either Y or X are false, or both are False");
+            }
+        }
+
+        // Output: Y is equal to True
+    ```
+
+6. Is Not Equal To:
+
+    * Operator:  ``` Expression != Expression ``` :: ``` IS NOT EQUAL TO ```
+
+    * Example:
+
+    ``` Rust
+        fn main() {
+            let y = true;
+
+            if y != false{
                 println!("Y is equal to True");
             }else{
                 println!("Y is equal to False");
             }
         }
 
-        // Output: Y is equal to 2, and X is equal to 3.
-
+        // Output: Y is equal to True
     ```
 
-3. **Logical NAND**: *IF* **NEITHER** values are true *OR* a **SINGULAR** value is true then the output will be true.
+7. Greater Than
 
-    * Operator: ``` !& ``` :: ``` LOGICAL NOT + LOGICAL AND ```
+    * Operator:  ``` Expression > Expression ``` :: ``` IS GREATER THAN ```
 
     * Example:
 
     ``` Rust
+        fn main() {
+            let y = 1;
 
-    ```
-
-4. **Logical NOR**: *IF* **NEITHER** value is true then the output will be true.
-
-    * Operator: ``` !| ``` :: ``` LOGICAL NOT + LOGICAL OR ```
-
-    * Example:
-
-    ``` Rust
-
-    ```
-
-5. **Logical XNOR**: *IF* **NEITHER** value is true *OR* both values **ARE** true then the output will be true.
-
-    * Operator: ``` !^ ``` :: ``` LOGICAL NOT + LOGICAL XOR ```
-
-    * Example:
-
-    ``` Rust
-
-    ```
-
-6. Is Equal To: The Operator on the left is compared to the Operator on the Right, if the values are equal to each other then the result is true.
-
-    * Operator:  ``` == ``` :: ``` IS EQUAL TO ```
-
-    * Example:
-
-    ``` Rust
-    fn main() {
-        let y = true;
-
-        if y == true{
-            println!("Y is equal to True");
-        }else{
-            println!("Y is equal to False");
+            if y > 0{
+                println!("Y evaluates to True");
+            }else{
+                println!("Y evaluates to False");
+            }
         }
-    }
+
+        // Output: Y evaluates to True
     ```
 
-7. Is Not Equal To:
+8. Less than
 
-8. Greater Than
+    * Operator:  ``` Expression < Expression ``` :: ``` IS LESS THAN ```
 
-9. Less than
+    * Example:
 
-10. Greater Than or Equal To:
+    ``` Rust
+        fn main() {
+            let y = 1;
 
-11. Less Than or Equal To:
+            if y < 2{
+                println!("Y evaluates to True");
+            }else{
+                println!("Y evaluates to False");
+            }
+        }
+
+        // Output: Y evaluates to True
+    ```
+
+9. Greater Than or Equal To:
+
+    * Operator:  ``` Expression >= Expression ``` :: ``` IS GREATER THAN OR EQUAL TO ```
+
+    * Example:
+
+    ``` Rust
+        fn main() {
+            let y = 20;
+
+            if y >= 20{
+                println!("Y evaluates to True");
+            }else{
+                println!("Y evaluates to False");
+            }
+        }
+
+        // Output: Y evaluates to True
+    ```
+
+10. Less Than or Equal To:
+
+    * Operator:  ``` Expression <= Expression ``` :: ``` IS LESS THAN OR EQUAL TO ```
+
+    * Example:
+
+    ``` Rust
+        fn main() {
+            let y = 1;
+
+            if y <= 20{
+                println!("Y evaluates to True");
+            }else{
+                println!("Y evaluates to False");
+            }
+        }
+
+        // Output: Y evaluates to True
+    ```
 
 ----
 
@@ -149,5 +252,3 @@ There are also operators in rust that allow us to manipulate the Boolean logic v
 2. [Operators in Rust](https://doc.rust-lang.org/reference/expressions/operator-expr.html)
 
 3. [Great Video on Logic Gates](https://www.youtube.com/watch?v=gI-qXk7XojA) && [A Base look on Logic Gates](https://www.youtube.com/watch?v=RhS-AL2ZcyE)
-
-4. []()

@@ -1,9 +1,9 @@
 fn main() {
-    let y = true;
+    let y = 1;
 
-    if y == !false{
-        println!("Y is equal to False");
+    if y < 2{
+        println!("Y evaluates to True");
     }else{
-        println!("Y is equal to True");
+        println!("Y evaluates to False");
     }
 }
