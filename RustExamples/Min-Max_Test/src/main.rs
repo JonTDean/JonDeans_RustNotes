@@ -1,3 +1,9 @@
 fn main() {
-    assert_eq!(i32::max_value(), 0)
+    let y = true;
+
+    if y == !false{
+        println!("Y is equal to False");
+    }else{
+        println!("Y is equal to True");
+    }
 }
