@@ -4,11 +4,11 @@ fn main() {
 
     let input = grab_input();
     // println!("{}", input);
-    println!("{}", fibonnaci_formula(input));
+    println!("The final number of given sequence {} is {}", input, fibonnaci_formula(input));
 }
 
 // Grabs the user input and converts to a number
-fn grab_input() -> i32{
+fn grab_input() -> u128{
     // Creates a string to store the user Input
     let mut get_length = String::new();
 
@@ -19,7 +19,7 @@ fn grab_input() -> i32{
         .expect("Failed to read line.");
     
     // Removes all whitespace and converts to an integer
-    let get_length: i32 = match get_length.trim().parse(){
+    let get_length: u128 = match get_length.trim().parse(){
         Ok(num) => num,          // If able to convert to int, stores the user input as the value for get_Length
         Err(_) => grab_input(),  // If not correct recalls statement
     };
@@ -28,7 +28,7 @@ fn grab_input() -> i32{
 }
 
 // Speaks in the fibonnaci lemon language
-fn fibonnaci_formula(num_length: i32) -> i32{
+fn fibonnaci_formula(num_length: u128) -> u128{
     let mut f1 = 0;             // Stores the first sequence of Fibo
     let mut f2 = 1;             // Stores the second sequence of Fibo
 
@@ -41,3 +41,11 @@ fn fibonnaci_formula(num_length: i32) -> i32{
 
     return f1;                  // Returns the value of Fibo
 }
+
+
+/*
+Sources:
+
+https://en.wikipedia.org/wiki/Fibonacci_number
+
+*/
