@@ -22,8 +22,8 @@ fn main(){
 
         // Strips the spaces from the input grabbed on line 19 and then converts that input into a Number
         let guess: u32 = match guess.trim().parse(){
-            Ok(num) => num,    // If a number is found then it gets returned into the match sequence on line 32
-            Err(_) => continue,     // If no number is found then nothing happens
+            Ok(num) => num,                 // If a number is found then it gets returned into the match sequence on line 32
+            Err(_) => continue,             // If no number is found then nothing happens
         };   
         
         println!("You guessed: {}", guess); //  Prints out the current value of var::guess
@@ -44,7 +44,7 @@ fn main(){
             Ordering::Greater => println!("Too Big!"),
             Ordering::Equal => {
                 println!("Correct!");
-                break;  // Exits out of the loop if the user enters the correct answer
+                break;                      // Exits out of the loop if the user enters the correct answer
             }
         }
 
